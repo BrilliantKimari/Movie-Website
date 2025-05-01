@@ -7,9 +7,9 @@ document.addEventListener('DOMContentLoaded', function() {
     setupWatchlistForm();        // Sets up the watchlist form submission
 });
 
-// ------------------------
+
 // Highlight Active Nav Link
-// ------------------------
+
 function highlightCurrentPage() {
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 
@@ -22,9 +22,9 @@ function highlightCurrentPage() {
     });
 }
 
-// ------------------------
+
 // Setup "Let's Go" Button
-// ------------------------
+
 function setupLetsGoButton() {
     const letsGoButton = document.querySelector('#lets-go');
 
@@ -36,9 +36,9 @@ function setupLetsGoButton() {
     }
 }
 
-// ---------------------------------
+
 // Setup Add to Watchlist Buttons
-// ---------------------------------
+
 function setupWatchlistButtons() {
     // Find all buttons with the 'add-to-watchlist' class
     document.querySelectorAll('.add-to-watchlist').forEach(button => {
@@ -58,9 +58,9 @@ function setupWatchlistButtons() {
     });
 }
 
-// --------------------------------------
+
 // Add a Movie Object to Local Storage
-// --------------------------------------
+
 function addToWatchlist(movie) {
     let watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
 
@@ -71,9 +71,9 @@ function addToWatchlist(movie) {
     }
 }
 
-// -----------------------------
+
 // Display Saved Watchlist Items
-// -----------------------------
+
 function displayWatchlist() {
     const watchlistContainer = document.getElementById('watchme');
     if (!watchlistContainer) return;
@@ -108,9 +108,9 @@ function displayWatchlist() {
     });
 }
 
-// -----------------------------------
+
 // Remove Movie from Watchlist by Index
-// -----------------------------------
+
 function removeFromWatchlist(index) {
     let watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
     watchlist.splice(index, 1); // Remove movie at given index
@@ -118,9 +118,9 @@ function removeFromWatchlist(index) {
     location.reload(); // Refresh to update UI
 }
 
-// ----------------------------
+
 // Handle Watchlist Form Submit
-// ----------------------------
+
 function setupWatchlistForm() {
     const form = document.getElementById('watchbook');
     if (form) {
